@@ -1,0 +1,22 @@
+CRITICAL - 2023-12-07 18:22:46 --> syntax error, unexpected end of file
+in APPPATH\Views\courses\allCourses.php on line 93.
+ 1 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 2 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('courses/allCourses', [], true)
+ 3 APPPATH\Controllers\CoursesController.php(24): view('courses/allCourses')
+ 4 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CoursesController->index()
+ 5 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoursesController))
+ 6 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 7 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+ 8 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('H:\\xampp\\htdocs\\Ektu-khani-tech-admin\\public\\index.php')
+CRITICAL - 2023-12-07 18:23:44 --> Undefined variable: courses
+in APPPATH\Views\courses\allCourses.php on line 67.
+ 1 APPPATH\Views\courses\allCourses.php(67): CodeIgniter\Debug\Exceptions->errorHandler(8, 'Undefined variable: courses', 'H:\\xampp\\htdocs\\Ektu-khani-tech-admin\\app\\Views\\courses\\allCourses.php', 67, [])
+ 2 SYSTEMPATH\View\View.php(228): include('H:\\xampp\\htdocs\\Ektu-khani-tech-admin\\app\\Views\\courses\\allCourses.php')
+ 3 SYSTEMPATH\View\View.php(231): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH\Common.php(1190): CodeIgniter\View\View->render('courses/allCourses', [], true)
+ 5 APPPATH\Controllers\CoursesController.php(24): view('courses/allCourses')
+ 6 SYSTEMPATH\CodeIgniter.php(942): App\Controllers\CoursesController->index()
+ 7 SYSTEMPATH\CodeIgniter.php(502): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\CoursesController))
+ 8 SYSTEMPATH\CodeIgniter.php(361): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 FCPATH\index.php(79): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Commands\Server\rewrite.php(47): require_once('H:\\xampp\\htdocs\\Ektu-khani-tech-admin\\public\\index.php')

@@ -29,6 +29,9 @@
 
     <!-- Template Stylesheet -->
     <link href="css/style.css" rel="stylesheet">
+    <style>
+ 
+    </style>
 </head>
 
 <body>
@@ -278,6 +281,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="d-flex align-items-center border-bottom py-2">
                                 <input class="form-check-input m-0" type="checkbox">
                                 <div class="w-100 ms-3">
@@ -287,6 +291,7 @@
                                     </div>
                                 </div>
                             </div>
+
                             <div class="d-flex align-items-center border-bottom py-2">
                                 <input class="form-check-input m-0" type="checkbox" checked>
                                 <div class="w-100 ms-3">
