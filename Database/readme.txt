@@ -1,0 +1,1 @@
+db name: ekt_db

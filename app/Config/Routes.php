@@ -9,3 +9,4 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 //show all courses
 $routes->get('/courses', 'CoursesController::index');
+$routes->get('/courses/insert', 'CoursesController::create');
