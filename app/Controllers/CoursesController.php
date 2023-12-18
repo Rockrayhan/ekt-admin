@@ -49,7 +49,7 @@ class CoursesController extends BaseController
         ];
 
         if (!$this->validate($rules)){
-            return view('/courses/insert');
+            return view('courses/insert');
         } else {
             $this->courses->insert($data);
             $session= session();

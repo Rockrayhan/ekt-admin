@@ -60,13 +60,14 @@
                     <div class="col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Floating Label</h6>
+                            <form method="post" action="/courses/store">
                             <div class="form-floating mb-3">
-                                <input type="email" class="form-control" id="floatingInput"
+                                <input type="text" class="form-control" id="floatingInput"
                                     placeholder="Enter Course Name" name="name">
                                 <label for="floatingInput">Course</label>
                             </div>
                             <div class="form-floating mb-3">
-                                <input type="password" class="form-control" id="floatingPassword"
+                                <input class="form-control" id="floatingPassword"
                                     placeholder="Price" name="price">
                                 <label for="floatingPassword">Price</label>
                             </div>
@@ -86,6 +87,11 @@
                                     id="floatingTextarea" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">Description</label>
                             </div>
+                            <div class="text-center">
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                    <button type="reset" class="btn btn-secondary">Reset</button>
+                                </div>
+                                </form>
                         </div>
                     </div>
                 </div>

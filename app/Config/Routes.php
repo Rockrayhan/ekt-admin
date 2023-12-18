@@ -5,8 +5,8 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-//dashboard
-$routes->get('/', 'Home::index');
-//show all courses
-$routes->get('/courses', 'CoursesController::index');
+
+$routes->get('/', 'Home::index'); //dashboard
+$routes->get('/courses', 'CoursesController::index');//show all courses
 $routes->get('/courses/insert', 'CoursesController::create');
+$routes->post('/courses/store', 'CoursesController::store');

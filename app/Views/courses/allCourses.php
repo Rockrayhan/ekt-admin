@@ -52,6 +52,14 @@
                     <div class="col-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4"> Here are All the Courses </h6>
+                               <!-- === alert ===-->
+                               <?php if (session()->getFlashdata('msg')) : ?>
+                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                    <?php echo session()->getFlashdata('msg'); ?>
+                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                </div>
+                            <?php endif; ?>
+                            <!-- ====== -->
                             <div class="table-responsive">
                                 <table class="table">
                                     <thead>
