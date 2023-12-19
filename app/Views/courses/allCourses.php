@@ -62,28 +62,33 @@
                             <!-- ====== -->
                             <div class="table-responsive">
                                 <table class="table">
-                                    <thead>
-                                        <tr>
-                                            <th scope="col">#</th>
-                                            <th scope="col"> Course Name </th>
-                                            <th scope="col">Catagory</th>
-                                            <th scope="col">Price</th>
-                                            <th scope="col">description</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php 
-                                         $num = 0;
-                                        foreach( $courses as $course ) :  ?>
-                                        <tr>
-                                            <th scope="row"> <?php echo ++$num ?> </th>
-                                           <td> <?php echo $course['course'] ?> </td>
-                                           <td> <?php echo $course['category'] ?> </td>
-                                           <td> <?php echo $course['price'] ?> </td>
-                                           <td> <?php echo $course['desc'] ?> </td>
-                                        </tr>
-                                        <?php endforeach ; ?>
-                                    </tbody>
+<thead>
+<tr>
+    <th scope="col">#</th>
+    <th scope="col"> Course Name </th>
+    <th scope="col">Catagory</th>
+    <th scope="col">Price</th>
+    <th scope="col">description</th>
+    <th scope="col">Action</th>
+</tr>
+</thead>
+<tbody>
+<?php 
+    $num = 0;
+foreach( $courses as $course ) :  ?>
+<tr>
+    <th scope="row"> <?php echo ++$num ?> </th>
+    <td> <?php echo $course['course'] ?> </td>
+    <td> <?php echo $course['category'] ?> </td>
+    <td> <?php echo $course['price'] ?> </td>
+    <td> <?php echo $course['desc'] ?> </td>
+    <td> <a href="<?php echo base_url('courses/delete/'.$course['course_id']) ?>  "><button class="btn btn-danger" onclick=" return confirm('Are you sure to Delete') ">  Delete </button></a> 
+
+    <a href="<?php echo base_url('courses/edit/'.$course['course_id']) ?>  "><button class="btn btn-warning"> Edit </button></a>
+</td>
+</tr>
+<?php endforeach ; ?>
+</tbody>
                                 </table>
                             </div>
                         </div>

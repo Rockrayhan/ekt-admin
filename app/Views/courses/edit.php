@@ -60,39 +60,47 @@
                     <div class="col-sm-12 col-xl-12">
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Floating Label</h6>
+                            <!-- === alert ===-->
+                            <?php if (session()->getFlashdata('msg')) : ?>
+                                                <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                                    <?php echo session()->getFlashdata('msg'); ?>
+                                                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                </div>
+                                            <?php endif; ?>
+                                            <!-- ====== -->
                             
-                            <form method="post" action="/courses/store">
-                            <div class="form-floating mb-3">
-                                <input type="text" class="form-control" id="floatingInput"
-                                    placeholder="Enter Course Name" name="name">
-                                <label for="floatingInput">Course</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <input class="form-control" id="floatingPassword"
-                                    placeholder="Price" name="price">
-                                <label for="floatingPassword">Price</label>
-                            </div>
-                            <div class="form-floating mb-3">
-                                <select class="form-select" id="floatingSelect"
-                                    aria-label="Floating label select example" name="cat">
-                                    <option selected>Open this select menu</option>
-                                    <option value="1">One</option>
-                                    <option value="2">Two</option>
-                                    <option value="3">Three</option>
-                                </select>
-                                <label for="floatingSelect">Category</label>
-                            </div>
+<form method="post" action="<?php echo site_url('/courses/update/'.$course_id) ?>">
+<div class="form-floating mb-3">
+    <input type="text" class="form-control" id="floatingInput"
+        placeholder="Enter Course Name" name="name" value="<?= $course ?>">
+    <label for="floatingInput">Course</label>
+</div>
+<div class="form-floating mb-3">
+    <input class="form-control" id="floatingPassword"
+        placeholder="Price" name="price"  value="<?= $price ?>">
+    <label for="floatingPassword">Price</label>
+</div>
+<div class="form-floating mb-3">
+    <select class="form-select" id="floatingSelect"
+        aria-label="Floating label select example" name="cat" >
+        <option selected>Open this select menu</option>
+        <option value="1">One</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+    </select>
+    <label for="floatingSelect">Category</label>
+</div>
 
-                            <div class="form-floating">
-                                <textarea name="desc" class="form-control" placeholder="Leave a comment here"
-                                    id="floatingTextarea" style="height: 150px;"></textarea>
-                                <label for="floatingTextarea">Description</label>
-                            </div>
-                            <div class="text-center">
-                                    <button type="submit" class="btn btn-primary">Add</button>
-                                    <button type="reset" class="btn btn-secondary">Reset</button>
-                                </div>
-                                </form>
+<div class="form-floating">
+    <textarea name="desc" class="form-control" placeholder="Leave a comment here"
+        id="floatingTextarea" style="height: 150px;"  value="<?= $desc ?>"></textarea>
+    <label for="floatingTextarea">Description</label>
+</div>
+<div class="text-center">
+        <button type="submit" class="btn btn-primary">Add</button>
+        <button type="reset" class="btn btn-secondary">Reset</button>
+    </div>
+    </form>
                         </div>
                     </div>
                 </div>

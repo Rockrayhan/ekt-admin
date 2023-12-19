@@ -57,4 +57,43 @@ class CoursesController extends BaseController
             $this->response->redirect('/courses');
         }
     }
+
+
+    // delete
+    public function delete($id){
+        $this->courses->where('course_id', $id);
+        $this->courses->delete();
+        $this->response->redirect('/courses');
+    }
+
+
+    // edit
+    public function edit($id){
+        $data = $this->courses->find($id);
+        // print_r($data);
+        return view("courses/edit", $data);
+    }
+
+    // update
+
+    public function update($id){
+        $data = [
+            'course' => $this->request->getVar('name'),
+            'category' => $this->request->getVar('cat'),
+            'price' => $this->request->getVar('price'),
+            'desc' => $this->request->getVar('desc'),
+        ];
+
+        $this->courses->update($id, $data);
+        $session = session();
+        $session->setFlashdata( 'msg', 'update SuccessFully' );
+        $this->response->redirect('/courses');
+        
+
+	
+	
+	
+	
+
+    }
 }
