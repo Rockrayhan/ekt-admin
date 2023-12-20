@@ -18,3 +18,9 @@ $routes->get('/courses/delete/(:num)', 'CoursesController::delete/$1');
 $routes->get('/courses/edit/(:num)', 'CoursesController::edit/$1');
 // update
 $routes->post('/courses/update/(:num)', 'CoursesController::update/$1');
+
+
+
+// signup / register
+$routes->get('/signup', 'SignupController::index');
+$routes->match(['get','post'] ,'signup/store', 'SignupController::store');
