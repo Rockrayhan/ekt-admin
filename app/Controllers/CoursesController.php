@@ -11,7 +11,7 @@ use App\Models\CourseModel;
 class CoursesController extends BaseController
 {
     private $courses ;
-    protected $helpers = ['form'];
+    protected $helpers = ['form', 'file' , 'url'];
 
     public function __construct()
     {
@@ -32,13 +32,17 @@ class CoursesController extends BaseController
     }
 
     public function store(){
+        $imgStore = $this->request->getFile('photo');
+        $imgName = $imgStore->getName() ;
         $data = [
             'course' => $this->request->getVar('name'),
             'category' => $this->request->getVar('cat'),
             'price' => $this->request->getVar('price'),
             'desc' => $this->request->getVar('desc'),
-            // 'photo' => $this->request->getFile('photo')->getName('photo'),
+            'photo' => $imgName ,
         ];
+
+        print_r($data) ;
 
         $rules = [
             'name' => 'required|max_length[30]',
@@ -51,11 +55,13 @@ class CoursesController extends BaseController
         if (!$this->validate($rules)){
             return view('courses/insert');
         } else {
+            $imgStore->move('assets/uploads', $imgName );
             $this->courses->insert($data);
             $session= session();
             $session->setFlashdata('msg', 'Inserted Successfully');
             $this->response->redirect('/courses');
         }
+
     }
 
 

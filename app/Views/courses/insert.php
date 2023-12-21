@@ -61,7 +61,7 @@
                         <div class="bg-secondary rounded h-100 p-4">
                             <h6 class="mb-4">Floating Label</h6>
                             
-                            <form method="post" action="/courses/store">
+                            <form method="post" action="/courses/store" enctype="multipart/form-data">
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="floatingInput"
                                     placeholder="Enter Course Name" name="name">
@@ -88,6 +88,12 @@
                                     id="floatingTextarea" style="height: 150px;"></textarea>
                                 <label for="floatingTextarea">Description</label>
                             </div>
+
+                            <div class="form-floating">
+                               <input type="file" name="photo">
+                                <label for="floatingTextarea">Photo</label>
+                            </div>
+
                             <div class="text-center">
                                     <button type="submit" class="btn btn-primary">Add</button>
                                     <button type="reset" class="btn btn-secondary">Reset</button>

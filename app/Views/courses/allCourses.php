@@ -65,6 +65,7 @@
 <thead>
 <tr>
     <th scope="col">#</th>
+    <th scope="col"> Photo </th>
     <th scope="col"> Course Name </th>
     <th scope="col">Catagory</th>
     <th scope="col">Price</th>
@@ -79,6 +80,7 @@ foreach( $courses as $course ) :  ?>
 <tr>
     <th scope="row"> <?php echo ++$num ?> </th>
     <td> <?php echo $course['course'] ?> </td>
+    <td> <img src="<?php echo  base_url('/assets/uploads/' . $course['photo']) ?>" width="50px" height="50px" alt=""> </td>
     <td> <?php echo $course['category'] ?> </td>
     <td> <?php echo $course['price'] ?> </td>
     <td> <?php echo $course['desc'] ?> </td>
