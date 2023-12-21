@@ -22,6 +22,14 @@
                             <a href="/courses/insert" class="dropdown-item"> Insert Course </a>
                         </div>
                     </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Instructors</a>
+                        <div class="dropdown-menu bg-transparent border-0">
+                            <a href="/courses" class="dropdown-item">All Instructors</a>
+                            <a href="/courses/insert" class="dropdown-item"> New Instructors </a>
+                        </div>
+                    </div>
                     <a href="widget.html" class="nav-item nav-link"><i class="fa fa-th me-2"></i>Widgets</a>
                     <a href="form.html" class="nav-item nav-link"><i class="fa fa-keyboard me-2"></i>Forms</a>
                     <a href="table.html" class="nav-item nav-link"><i class="fa fa-table me-2"></i>Tables</a>

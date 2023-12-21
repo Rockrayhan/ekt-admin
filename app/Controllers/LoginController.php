@@ -40,10 +40,10 @@ class LoginController extends BaseController
                 $session->set($userData);
                 return redirect()->to('/') ;
             } 
-        //     else {
-        //         $session->setFlashdata('msg', 'Your Password is Incorrect');
-        //         return view('login') ;
-        //     }
+            else {
+                $session->setFlashdata('msg', 'Your Password is Incorrect');
+                return view('login') ;
+            }
         } else {
             $session->setFlashdata('msg', 'Your Email Incorrect');
             return view('login') ;

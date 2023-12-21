@@ -5,9 +5,9 @@ use CodeIgniter\Router\RouteCollection;
 /**
  * @var RouteCollection $routes
  */
-
-$routes->get('/', 'Home::index',); //dashboard
-$routes->get('/courses', 'CoursesController::index');//show all courses
+// products
+$routes->get('/', 'Home::index', ['filter' => 'authGuard'] ); //dashboard
+$routes->get('/courses', 'CoursesController::index');   //show all courses
 $routes->get('/courses/insert', 'CoursesController::create');
 $routes->post('/courses/store', 'CoursesController::store');
 
@@ -18,6 +18,14 @@ $routes->get('/courses/delete/(:num)', 'CoursesController::delete/$1');
 $routes->get('/courses/edit/(:num)', 'CoursesController::edit/$1');
 // update
 $routes->post('/courses/update/(:num)', 'CoursesController::update/$1');
+
+
+
+// insturctors
+$routes->get('instructors', 'Home::index' ); //
+// $routes->get('/courses', 'CoursesController::index');   //show all courses
+// $routes->get('/courses/insert', 'CoursesController::create');
+// $routes->post('/courses/store', 'CoursesController::store');
 
 
 
