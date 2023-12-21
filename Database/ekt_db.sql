@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2023 at 01:47 AM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Dec 21, 2023 at 08:09 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -32,21 +32,37 @@ CREATE TABLE `courses` (
   `course` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
   `price` int(11) DEFAULT NULL,
-  `desc` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `desc` varchar(150) NOT NULL,
+  `photo` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`course_id`, `course`, `category`, `price`, `desc`) VALUES
-(1, 'English Grammer', 'Eng', 1200, 'asdasdasdasd'),
-(2, 'English Grammer', 'Eng', 1200, 'asdasdasdasd'),
-(3, 'Only English', 'Open this select menu', 420, ''),
-(4, 'English Grammer', 'Eng', 1200, 'asdasdasdasd'),
-(5, 'English Grammer', 'Eng', 1200, 'asdasdasdasd'),
-(6, 'English Grammer', 'Eng', 1200, 'asdasdasdasd'),
-(7, 'English Grammer', 'Eng', 1200, 'asdasdasdasd');
+INSERT INTO `courses` (`course_id`, `course`, `category`, `price`, `desc`, `photo`) VALUES
+(1, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
+(2, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
+(3, 'Only English', 'Open this select menu', 420, '', ''),
+(4, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
+(5, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
+(6, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
+(7, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
+(10, 'ALAUDDIN', '2', 150, 'asdasdsad', 'test_1.jpg'),
+(11, 'ALAUDDIN quasemi', '1', 1500, 'asdsasad', 'test_1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `instructors`
+--
+
+CREATE TABLE `instructors` (
+  `ins_id` int(11) NOT NULL,
+  `name` varchar(50) NOT NULL,
+  `topic` varchar(50) NOT NULL,
+  `photo` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -58,16 +74,15 @@ CREATE TABLE `users` (
   `user_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `password` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+  `password` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`user_id`, `name`, `email`, `password`) VALUES
-(2, 'abc', 'abc@gmail.com', '$2y$10$646B5xeMyW0J5pY/1lK/ZOLAc2/QOdAMIab3kJYTTNr'),
-(3, 'alauddin', 'alu@gmail.com', '$2y$10$NqgSMAV9InLReczQYD.vxOP/k/cP9zZ7NsfdGQLZ6lx');
+(5, 'abcd', 'abc@gmail.com', '$2y$10$JVP.PU/p5WDAksYQiOYc9O50rzmv5Jfb6ErBcxfZtnaKD753fQc7.');
 
 --
 -- Indexes for dumped tables
@@ -78,6 +93,12 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`) VALUES
 --
 ALTER TABLE `courses`
   ADD PRIMARY KEY (`course_id`);
+
+--
+-- Indexes for table `instructors`
+--
+ALTER TABLE `instructors`
+  ADD PRIMARY KEY (`ins_id`);
 
 --
 -- Indexes for table `users`
@@ -93,13 +114,19 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `instructors`
+--
+ALTER TABLE `instructors`
+  MODIFY `ins_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
