@@ -31,3 +31,8 @@ $routes->post('/loginuser', 'LoginController::login');
 
 //signout
 $routes->get('/signout', 'LoginController::logout');
+
+
+// Frontend
+$routes->get('/coursesall', 'Frontend\CourseController::index');
+$routes->get('/course/(:num)', 'Frontend\CourseController::show/$1');
