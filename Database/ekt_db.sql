@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 21, 2023 at 08:09 AM
--- Server version: 10.4.27-MariaDB
--- PHP Version: 7.4.33
+-- Generation Time: Dec 22, 2023 at 04:05 AM
+-- Server version: 10.4.25-MariaDB
+-- PHP Version: 7.4.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -28,26 +28,24 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE `courses` (
-  `course_id` int(11) NOT NULL,
+  `id` int(11) NOT NULL,
   `course` varchar(50) NOT NULL,
   `category` varchar(50) NOT NULL,
   `price` int(11) DEFAULT NULL,
   `desc` varchar(150) NOT NULL,
   `photo` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `courses`
 --
 
-INSERT INTO `courses` (`course_id`, `course`, `category`, `price`, `desc`, `photo`) VALUES
+INSERT INTO `courses` (`id`, `course`, `category`, `price`, `desc`, `photo`) VALUES
 (1, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
 (2, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
 (3, 'Only English', 'Open this select menu', 420, '', ''),
-(4, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
-(5, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
+(4, 'Urdu Grammer', 'Open this select menu', 420, 'this is urdu ', ''),
 (6, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
-(7, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
 (10, 'ALAUDDIN', '2', 150, 'asdasdsad', 'test_1.jpg'),
 (11, 'ALAUDDIN quasemi', '1', 1500, 'asdsasad', 'test_1.jpg');
 
@@ -62,7 +60,7 @@ CREATE TABLE `instructors` (
   `name` varchar(50) NOT NULL,
   `topic` varchar(50) NOT NULL,
   `photo` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -75,7 +73,7 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `users`
@@ -92,7 +90,7 @@ INSERT INTO `users` (`user_id`, `name`, `email`, `password`) VALUES
 -- Indexes for table `courses`
 --
 ALTER TABLE `courses`
-  ADD PRIMARY KEY (`course_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `instructors`
@@ -114,7 +112,7 @@ ALTER TABLE `users`
 -- AUTO_INCREMENT for table `courses`
 --
 ALTER TABLE `courses`
-  MODIFY `course_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT for table `instructors`

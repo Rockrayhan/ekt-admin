@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class CourseModel extends Model
 {
     protected $table            = 'courses';
-    protected $primaryKey       = 'course_id';
+    protected $primaryKey       = 'id';
     protected $useAutoIncrement = true;
     protected $returnType       = 'array';
     protected $useSoftDeletes   = false;

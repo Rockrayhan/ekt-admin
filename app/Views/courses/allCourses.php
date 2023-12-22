@@ -84,9 +84,9 @@ foreach( $courses as $course ) :  ?>
     <td> <?php echo $course['category'] ?> </td>
     <td> <?php echo $course['price'] ?> </td>
     <td> <?php echo $course['desc'] ?> </td>
-    <td> <a href="<?php echo base_url('courses/delete/'.$course['course_id']) ?>  "><button class="btn btn-danger" onclick=" return confirm('Are you sure to Delete') ">  Delete </button></a> 
+    <td> <a href="<?php echo base_url('courses/delete/'.$course['id']) ?>  "><button class="btn btn-danger" onclick=" return confirm('Are you sure to Delete') ">  Delete </button></a> 
 
-    <a href="<?php echo base_url('courses/edit/'.$course['course_id']) ?>  "><button class="btn btn-warning"> Edit </button></a>
+    <a href="<?php echo base_url('courses/edit/'.$course['id']) ?>  "><button class="btn btn-warning"> Edit </button></a>
 </td>
 </tr>
 <?php endforeach ; ?>

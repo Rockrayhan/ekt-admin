@@ -67,7 +67,7 @@ class CoursesController extends BaseController
 
     // delete
     public function delete($id){
-        $this->courses->where('course_id', $id);
+        $this->courses->where('id', $id);
         $this->courses->delete();
         $this->response->redirect('/courses');
     }

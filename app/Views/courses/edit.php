@@ -69,7 +69,7 @@
                                             <?php endif; ?>
                                             <!-- ====== -->
                             
-<form method="post" action="<?php echo site_url('/courses/update/'.$course_id) ?>">
+<form method="post" action="<?php echo site_url('/courses/update/'.$id) ?>">
 <div class="form-floating mb-3">
     <input type="text" class="form-control" id="floatingInput"
         placeholder="Enter Course Name" name="name" value="<?= $course ?>">

@@ -21,7 +21,7 @@ class CourseController extends BaseController
     public function show($id = null)
     {
         $model = new CourseModel();
-        $data = $model->getWhere(['course_id' => $id])->getResult();
+        $data = $model->getWhere(['id' => $id])->getResult();
         if($data){
             return $this->respond($data);
         }else{
