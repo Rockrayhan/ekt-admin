@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2023 at 02:36 AM
+-- Generation Time: Dec 23, 2023 at 07:22 PM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -48,6 +48,32 @@ INSERT INTO `courses` (`id`, `course`, `category`, `price`, `desc`, `photo`) VAL
 (6, 'English Grammer', 'Eng', 1200, 'asdasdasdasd', ''),
 (10, 'ALAUDDIN', '2', 150, 'asdasdsad', 'test_1.jpg'),
 (11, 'ALAUDDIN quasemi', '1', 1500, 'asdsasad', 'test_1.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `enrolls`
+--
+
+CREATE TABLE `enrolls` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(50) NOT NULL,
+  `mobile` varchar(11) NOT NULL,
+  `course_name` varchar(100) NOT NULL,
+  `price` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `enrolls`
+--
+
+INSERT INTO `enrolls` (`id`, `user_name`, `mobile`, `course_name`, `price`) VALUES
+(1, 'rayhan', '0155555', 'Only Englishs', 4200),
+(2, 'rayhan', '015555', 'Only Englishs', 4200),
+(3, 'rayhan22', '015555', 'Only Englishs', 4200),
+(4, 'rayhan22', '015555', 'Only Englishh', 4200),
+(5, 'rayhan22', '015555', 'Only English', 420),
+(6, 'hemele', '1522', 'ALAUDDIN', 150);
 
 -- --------------------------------------------------------
 
@@ -132,6 +158,12 @@ ALTER TABLE `courses`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indexes for table `enrolls`
+--
+ALTER TABLE `enrolls`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `instructors`
 --
 ALTER TABLE `instructors`
@@ -164,6 +196,12 @@ ALTER TABLE `users`
 --
 ALTER TABLE `courses`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+
+--
+-- AUTO_INCREMENT for table `enrolls`
+--
+ALTER TABLE `enrolls`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `instructors`
