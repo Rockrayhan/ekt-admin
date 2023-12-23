@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 22, 2023 at 04:05 AM
+-- Generation Time: Dec 23, 2023 at 02:36 AM
 -- Server version: 10.4.25-MariaDB
 -- PHP Version: 7.4.30
 
@@ -65,6 +65,45 @@ CREATE TABLE `instructors` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `orders`
+--
+
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL,
+  `user_name` varchar(100) NOT NULL,
+  `product_name` varchar(150) NOT NULL,
+  `price` int(6) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `testimonials`
+--
+
+CREATE TABLE `testimonials` (
+  `id` int(11) NOT NULL,
+  `name` varchar(100) NOT NULL,
+  `role` varchar(50) NOT NULL,
+  `comment` varchar(150) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `testimonials`
+--
+
+INSERT INTO `testimonials` (`id`, `name`, `role`, `comment`) VALUES
+(1, 'Alen Shopon', 'Actor', ''),
+(2, 'abc22', 'asdasd', ''),
+(3, 'abc22', 'asdasd', ''),
+(4, 'abc22', 'asdasdsd', ''),
+(5, 'abc22', 'asdasd', ''),
+(6, 'abcdd', 'Actor', 'asdsadasd'),
+(7, 'Only English', 'aa', 'asdasd');
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `users`
 --
 
@@ -99,6 +138,18 @@ ALTER TABLE `instructors`
   ADD PRIMARY KEY (`ins_id`);
 
 --
+-- Indexes for table `orders`
+--
+ALTER TABLE `orders`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `users`
 --
 ALTER TABLE `users`
@@ -119,6 +170,18 @@ ALTER TABLE `courses`
 --
 ALTER TABLE `instructors`
   MODIFY `ins_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `orders`
+--
+ALTER TABLE `orders`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `testimonials`
+--
+ALTER TABLE `testimonials`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `users`
