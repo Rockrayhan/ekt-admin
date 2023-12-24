@@ -36,9 +36,9 @@ $routes->get('/reviews/delete/(:num)', 'ReviewControleller::delete/$1');
 // $routes->post('/courses/store', 'ReviewControleller::store');
 
 
-$routes->get('/courses/delete/(:num)', 'CoursesController::delete/$1'); // delete
-$routes->get('/courses/edit/(:num)', 'CoursesController::edit/$1'); // edit
-$routes->post('/courses/update/(:num)', 'CoursesController::update/$1'); // update
+// orders
+$routes->get('/orders', 'OrderController::index');   //show all review
+$routes->get('/orders/delete/(:num)', 'OrderController::delete/$1');   //delete all review
 
 
 

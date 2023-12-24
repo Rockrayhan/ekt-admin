@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 23, 2023 at 07:22 PM
--- Server version: 10.4.25-MariaDB
--- PHP Version: 7.4.30
+-- Generation Time: Dec 24, 2023 at 08:56 AM
+-- Server version: 10.4.27-MariaDB
+-- PHP Version: 7.4.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -34,7 +34,7 @@ CREATE TABLE `courses` (
   `price` int(11) DEFAULT NULL,
   `desc` varchar(150) NOT NULL,
   `photo` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `courses`
@@ -61,19 +61,14 @@ CREATE TABLE `enrolls` (
   `mobile` varchar(11) NOT NULL,
   `course_name` varchar(100) NOT NULL,
   `price` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `enrolls`
 --
 
 INSERT INTO `enrolls` (`id`, `user_name`, `mobile`, `course_name`, `price`) VALUES
-(1, 'rayhan', '0155555', 'Only Englishs', 4200),
-(2, 'rayhan', '015555', 'Only Englishs', 4200),
-(3, 'rayhan22', '015555', 'Only Englishs', 4200),
-(4, 'rayhan22', '015555', 'Only Englishh', 4200),
-(5, 'rayhan22', '015555', 'Only English', 420),
-(6, 'hemele', '1522', 'ALAUDDIN', 150);
+(7, 'rayhan55', '015555', 'Only English', 420);
 
 -- --------------------------------------------------------
 
@@ -86,20 +81,7 @@ CREATE TABLE `instructors` (
   `name` varchar(50) NOT NULL,
   `topic` varchar(50) NOT NULL,
   `photo` varchar(100) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `orders`
---
-
-CREATE TABLE `orders` (
-  `id` int(11) NOT NULL,
-  `user_name` varchar(100) NOT NULL,
-  `product_name` varchar(150) NOT NULL,
-  `price` int(6) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 -- --------------------------------------------------------
 
@@ -112,20 +94,18 @@ CREATE TABLE `testimonials` (
   `name` varchar(100) NOT NULL,
   `role` varchar(50) NOT NULL,
   `comment` varchar(150) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `testimonials`
 --
 
 INSERT INTO `testimonials` (`id`, `name`, `role`, `comment`) VALUES
-(1, 'Alen Shopon', 'Actor', ''),
-(2, 'abc22', 'asdasd', ''),
-(3, 'abc22', 'asdasd', ''),
-(4, 'abc22', 'asdasdsd', ''),
-(5, 'abc22', 'asdasd', ''),
-(6, 'abcdd', 'Actor', 'asdsadasd'),
-(7, 'Only English', 'aa', 'asdasd');
+(1, 'Alen Shopon', 'Actor', ' It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 19'),
+(5, 'abc22', 'asdasd', 'as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use '),
+(6, 'abcdd', 'Actor', 'as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use '),
+(7, 'Only English', 'aa', 'as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use '),
+(8, 'ALAUDDIN', 'Debugger', 'as opposed to using \'Content here, content here\', making it look like readable English. Many desktop publishing packages and web page editors now use ');
 
 -- --------------------------------------------------------
 
@@ -138,7 +118,7 @@ CREATE TABLE `users` (
   `name` varchar(50) NOT NULL,
   `email` varchar(50) NOT NULL,
   `password` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `users`
@@ -170,12 +150,6 @@ ALTER TABLE `instructors`
   ADD PRIMARY KEY (`ins_id`);
 
 --
--- Indexes for table `orders`
---
-ALTER TABLE `orders`
-  ADD PRIMARY KEY (`id`);
-
---
 -- Indexes for table `testimonials`
 --
 ALTER TABLE `testimonials`
@@ -201,7 +175,7 @@ ALTER TABLE `courses`
 -- AUTO_INCREMENT for table `enrolls`
 --
 ALTER TABLE `enrolls`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `instructors`
@@ -210,16 +184,10 @@ ALTER TABLE `instructors`
   MODIFY `ins_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT for table `orders`
---
-ALTER TABLE `orders`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
-
---
 -- AUTO_INCREMENT for table `testimonials`
 --
 ALTER TABLE `testimonials`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `users`
