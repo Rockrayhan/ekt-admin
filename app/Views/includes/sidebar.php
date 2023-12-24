@@ -34,10 +34,10 @@
 
                 <!-- reviews  -->
                     <div class="nav-item dropdown">
-                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="fa fa-laptop me-2"></i>Instructors</a>
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown"><i class="bi bi-star me-2"></i>Reviews</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="/courses" class="dropdown-item">All Reviews</a>
-                            <a href="/courses/insert" class="dropdown-item"> Insert Reviews </a>
+                            <a href="/reviews" class="dropdown-item">All Reviews</a>
+                            
                         </div>
                     </div>
 

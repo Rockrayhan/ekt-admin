@@ -24,4 +24,11 @@ class ReviewControleller extends BaseController
         // print_r($data);
         return view('reviews/allReviews', $data);
     }
+
+        // delete
+        public function delete($id){
+            $this->reviews->where('id', $id);
+            $this->reviews->delete();
+            $this->response->redirect('/reviews');
+        }
 }

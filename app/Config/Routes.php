@@ -31,8 +31,9 @@ $routes->get('instructors', 'Home::index' ); //
 
 // Reviews
 $routes->get('/reviews', 'ReviewControleller::index');   //show all review
-$routes->get('/courses/insert', 'ReviewControleller::create');
-$routes->post('/courses/store', 'ReviewControleller::store');
+$routes->get('/reviews/delete/(:num)', 'ReviewControleller::delete/$1');
+// $routes->get('/courses/insert', 'ReviewControleller::create');
+// $routes->post('/courses/store', 'ReviewControleller::store');
 
 
 $routes->get('/courses/delete/(:num)', 'CoursesController::delete/$1'); // delete
